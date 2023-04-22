@@ -1,4 +1,4 @@
-package com.webview.myapplication;
+package com.papputech.nallabrowser;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -15,9 +15,11 @@ import android.webkit.URLUtil;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -65,7 +67,6 @@ public class MainActivity extends Activity {
             dm.enqueue(request);
             Toast.makeText(getApplicationContext(), "Downloading File", Toast.LENGTH_LONG).show();
         });
-        mWebView.loadUrl("https://github.com/satyakami"); //Replace The Link Here
     }
     private static class HelloWebViewClient extends WebViewClient
     {
@@ -86,4 +87,14 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void go(View view){
+        EditText mEdit   = (EditText)findViewById(R.id.url);
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        String  url = String.valueOf(mEdit.getText());
+        if (url.contains("kavinwedspriya.com")){
+            url = "https://kavinwedspriya.pythonanywhere.com";
+        }
+        mWebView.loadUrl(url);
+    }
 }

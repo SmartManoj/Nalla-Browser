@@ -18,5 +18,5 @@ Download here : [Demo Apk](https://github.com/BishwasSagar/Android-Webview-App/r
 ## Change Website URL 
 Open the ```app/src/main/java/com/webview/app/MainActivity.java``` file and replace `https://github.com/satyakami` on line **68** with your website
 ```json
-mWebView.loadUrl("https://github.com/satyakami");
+mWebView.loadUrl("https://google.com");
 ```
